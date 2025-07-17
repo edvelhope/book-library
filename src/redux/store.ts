@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 import bookReducer from "./bookSlice";
+import authReducer from "./authSlice"
 
 // Creo lo store combinando i reducer tramite RTK
 export const store = configureStore({
     reducer: {
-        books: bookReducer
+        books: bookReducer,
+        auth: authReducer
     }
 });
 

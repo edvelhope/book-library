@@ -3,6 +3,7 @@ import HomePage from "./pages/HomePage";
 import Library from "./pages/Library";
 import BookInfo from "./pages/BookInfo";
 import Favourites from "./pages/Favourites";
+import Login from "./components/Login";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       </nav>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/books" element={<Library />} />
         <Route path="/favourites" element={<Favourites />} />
         {/* Rotta dinamica con annidamento */}
