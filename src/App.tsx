@@ -12,17 +12,26 @@ function App() {
   const dispatch = useDispatch();
 
   return (
-    <div className="container mx-auto bg-white text-gray-900 p-6 shadow-lg rounded-md">
+    <div className="container mx-auto p-6 shadow-lg rounded-md h-screen">
       {/* Navbar */}
       <nav className="bg-gray-800 text-yellow-400 p-4 rounded-t-md">
         <div className="flex flex-wrap justify-between items-center space-x-6">
-          <Link to="/" className="text-xl font-semibold hover:text-yellow-500 transition duration-300">
+          <Link
+            to="/"
+            className="text-xl font-semibold hover:text-yellow-500 transition duration-300"
+          >
             Home
           </Link>
-          <Link to="/books" className="text-xl font-semibold hover:text-yellow-500 transition duration-300">
+          <Link
+            to="/books"
+            className="text-xl font-semibold hover:text-yellow-500 transition duration-300"
+          >
             Libreria
           </Link>
-          <Link to="/favourites" className="text-xl font-semibold hover:text-yellow-500 transition duration-300">
+          <Link
+            to="/favourites"
+            className="text-xl font-semibold hover:text-yellow-500 transition duration-300"
+          >
             Preferiti
           </Link>
         </div>
@@ -59,7 +68,11 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/books" element={<Library />} />
           <Route path="/favourites" element={<Favourites />} />
-          <Route path="/books/:id" element={<BookInfo />} />
+
+          {/* Rotta dinamica con annidamento */}
+          <Route path="/books/:id" element={<BookInfo />}>
+            <Route path="info" element={<BookInfo />} />
+          </Route>
         </Routes>
       </main>
     </div>
@@ -67,4 +80,3 @@ function App() {
 }
 
 export default App;
-

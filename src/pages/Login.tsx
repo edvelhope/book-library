@@ -62,6 +62,7 @@ const Login: React.FC = () => {
         </div>
         {error && <p style={{ color: "red" }}>{error}</p>}
         <button
+        className="btn"
           onClick={handleLogin}
           style={{ width: "100%", padding: "10px" }}
         >
