@@ -30,12 +30,16 @@ const Login: React.FC = () => {
   // };
 
   return (
-    <div style={{ maxWidth: "400px", margin: "50px auto", padding: "20px" }}>
+    <div
+      className="border border-white rounded-sm"
+      style={{ maxWidth: "400px", margin: "50px auto", padding: "20px" }}
+    >
       <h2>Accesso</h2>
       <div>
         <div style={{ marginBottom: "15px" }}>
           <label>Username:</label>
           <input
+            className="input"
             type="text"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
@@ -47,6 +51,7 @@ const Login: React.FC = () => {
         <div style={{ marginBottom: "15px" }}>
           <label>Password:</label>
           <input
+            className="input"
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
@@ -65,6 +70,7 @@ const Login: React.FC = () => {
       </div>
 
       <div
+        className="text-black"
         style={{
           marginTop: "20px",
           padding: "15px",

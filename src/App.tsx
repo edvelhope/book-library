@@ -11,7 +11,7 @@ function App() {
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
   return (
-    <div className="container bg-gray-800 p-4 shadow-md mx-auto ">
+    <div className="container bg-gray-800 p-4 shadow-md mx-auto h-screen">
       <nav>
         <div className="flex flex-wrap justify-between rounded-b-sm  items-center text-yellow">
           <Link to="/" className="hover:text-yellow-400">
