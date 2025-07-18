@@ -26,7 +26,7 @@ function App() {
             Preferiti
           </Link>
         </div>
-        
+
         <div className="mt-4 flex justify-between items-center">
           {user ? (
             <>
@@ -67,4 +67,9 @@ function App() {
 }
 
 export default App;
+
+
+
+
+
 
