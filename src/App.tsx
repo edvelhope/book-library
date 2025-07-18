@@ -11,20 +11,20 @@ function App() {
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
   return (
-    <div className="container  mx-auto ">
+    <div className="container bg-gray-800 p-4 shadow-md mx-auto ">
       <nav>
-        <div className="flex flex-wrap justify-between items-center">
+        <div className="flex flex-wrap justify-between rounded-b-sm  items-center text-yellow">
           <Link to="/" className="hover:text-yellow-400">
             Home
           </Link>
-          <Link to="/books" className="hover:text-yellow-400">
+          <Link to="/books" className="hover:text-yellow-400 font-semibold transition">
             Libreria
           </Link>
-          <Link to="/favourites" className="hover:text-yellow-400">
+          <Link to="/favourites" className="hover:text-yellow-400 font-semibold transition">
             Preferiti
           </Link>
         </div>
-        <div className="mt-2 md:mt-0">
+        <div className="mt-2 md:mt-0 flex items-center">
           {user ? (
             <>
               <span className="text-sm italic">
@@ -34,7 +34,7 @@ function App() {
               <button onClick={() => dispatch(logout())}>Logout</button>
             </>
           ) : (
-            <Link to="/login" className="hover:text-yellow-400">
+            <Link to="/login" className="hover:text-yellow-400 font-semibold transition ">
               Login
             </Link>
           )}
