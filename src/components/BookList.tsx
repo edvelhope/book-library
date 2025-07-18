@@ -7,9 +7,9 @@ export default function BookList() {
   //selezioniamo lo slice 'notes' dallo stato globale.
   const books = useSelector((state: RootState) => state.books);
   return (
-    <ul className="flex flex-col gap-2 mt-5">
+    <ul className="flex flex-wrap justify-center gap-2 mt-5">
       {books.length === 0 ? (
-        <p className="empty-message">Nessun appunto presente.</p>
+        <p className="empty-message">Nessun libro presente</p>
       ) : (
         books.map((book) => <BookItem key={book.id} book={book} />)
       )}
