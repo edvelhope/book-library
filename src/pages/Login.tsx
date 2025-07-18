@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import type { AppDispatch } from "../redux/store";
 import { authenticateUser, loginSuccess } from "../redux/authSlice";
+import { useNavigate } from "react-router-dom";
 
 const Login: React.FC = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const dispatch = useDispatch<AppDispatch>();
+  const navigate = useNavigate();
 
   const handleLogin = () => {
     const authenticatedUser = authenticateUser(username, password);
@@ -15,16 +17,17 @@ const Login: React.FC = () => {
     if (authenticatedUser) {
       dispatch(loginSuccess(authenticatedUser));
       setError("");
+      navigate("/"); // redireziona alla home
     } else {
       setError("Username o password non validi");
     }
   };
 
-  const handleKeyPress = (e: React.KeyboardEvent) => {
-    if (e.key === "Enter") {
-      handleLogin();
-    }
-  };
+  // const handleKeyPress = (e: React.KeyboardEvent) => {
+  //   if (e.key === "Enter") {
+  //     handleLogin();
+  //   }
+  // };
 
   return (
     <div style={{ maxWidth: "400px", margin: "50px auto", padding: "20px" }}>
@@ -36,7 +39,7 @@ const Login: React.FC = () => {
             type="text"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            onKeyPress={handleKeyPress}
+            // onKeyPress={handleKeyPress}
             style={{ width: "100%", padding: "8px", marginTop: "5px" }}
             required
           />
@@ -47,7 +50,7 @@ const Login: React.FC = () => {
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            onKeyPress={handleKeyPress}
+            // onKeyPress={handleKeyPress}
             style={{ width: "100%", padding: "8px", marginTop: "5px" }}
             required
           />
